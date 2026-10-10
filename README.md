@@ -40,6 +40,7 @@ The idea is simple: instead of using AI to spend more time on a screen, why not 
 - **Backend:** Node.js, Express
 - **AI model:** Gemma (`gemma4:e2b`)
 - **Local AI runtime:** Ollama
+- **Hosted AI Runtime:** Hugging Face
 - **Storage:** Browser localStorage
 
 ## Getting Started
@@ -138,15 +139,14 @@ TouchGrass is my attempt at this idea: AI creates the mission, but the actual ac
 
 **Challenge link:** [Hacktoberfest Week 1 — Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)
 
-**Prize category:** Best Use of Gemma, where applicable. The project uses Gemma locally through Ollama; the submission demo should show that the model actually generated the mission.
+**Prize category:** Best Use of Gemma, Vercel and Render where applicable. The project uses Gemma locally through Ollama;
 
 ## Current Limitations
 
-- Ollama and the model need to be installed locally.
 - The app can use fallback missions if the AI model is unavailable.
+- For hosted AI it can use fallback missions due to unavailability of AI model or because of not enough credits.
 - Submissions are stored in the browser and are not synced to an account or cloud database.
-- Photo evidence is optional and is not independently verified by AI.
-- A hosted demo is not currently available.
+- For local usage Ollama and the model need to be installed locally.
 
 ## License
 
