@@ -29,6 +29,10 @@ The idea is simple: instead of using AI to spend more time on a screen, why not 
 <img width="42%" alt="image" src="https://github.com/user-attachments/assets/b5e377d6-4dd3-42fc-8723-c3be3c6f94c9" />
 <img width="42%" alt="image" src="https://github.com/user-attachments/assets/04242ee9-8deb-43e5-82b3-9d6232fb0d5b" />
 
+## Live Links
+
+- **Demo Video:** https://youtu.be/9seersnxmN4
+
 ## Tech Stack
 
 - **Frontend:** React, Vite, CSS
