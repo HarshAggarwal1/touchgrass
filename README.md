@@ -31,6 +31,7 @@ The idea is simple: instead of using AI to spend more time on a screen, why not 
 
 ## Live Links
 
+- **Live Link:** https://touchgrass-delta-six.vercel.app/
 - **Demo Video:** https://youtu.be/9seersnxmN4
 
 ## Tech Stack
