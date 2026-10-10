@@ -19,7 +19,15 @@ The idea is simple: instead of using AI to spend more time on a screen, why not 
 
 ## Screenshots
 
-Screenshots will be added here.
+<img width="950" height="533" alt="image" src="https://github.com/user-attachments/assets/86dbadb6-a3fb-4059-9c43-faa95a230d55" />
+<img width="938" height="533" alt="image" src="https://github.com/user-attachments/assets/eb50ff1e-001b-4981-acde-f5ef53fd2173" />
+<img width="947" height="534" alt="image" src="https://github.com/user-attachments/assets/37056a47-28db-4de4-b403-76d21931838b" />
+<img width="945" height="533" alt="image" src="https://github.com/user-attachments/assets/138f3685-706a-4c97-b013-b9187ac9b064" />
+<img width="943" height="535" alt="image" src="https://github.com/user-attachments/assets/d40a45f6-00b9-43d2-b2d2-a9c3fc4d0257" />
+<img width="945" height="536" alt="image" src="https://github.com/user-attachments/assets/88103c5d-74e4-4217-994f-3eb629bc0824" />
+<img width="943" height="533" alt="image" src="https://github.com/user-attachments/assets/ec2c3649-8d6f-494d-bebf-243e1c3168b5" />
+<img width="947" height="529" alt="image" src="https://github.com/user-attachments/assets/b5e377d6-4dd3-42fc-8723-c3be3c6f94c9" />
+<img width="942" height="536" alt="image" src="https://github.com/user-attachments/assets/04242ee9-8deb-43e5-82b3-9d6232fb0d5b" />
 
 ## Tech Stack
 
