@@ -182,7 +182,7 @@ The project uses **Gemma** for AI-generated outdoor missions, **Vercel** to host
 
 The goal is to use AI to encourage people to spend less time on screens and more time outside. The model creates the mission; the user completes it in the real world.
 
-**Technologies showcased:** Gemma, Vercel, and Render.
+**Technologies showcased:** Gemma, Vercel and Render.
 
 ## License
 
