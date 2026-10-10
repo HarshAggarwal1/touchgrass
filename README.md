@@ -174,13 +174,15 @@ Avoid including sensitive personal information in mission requests.
 - Submissions are stored locally rather than in a cloud database.
 - Clearing browser data may remove saved submissions.
 
-## Hacktoberfest '26
+## Hacktoberfest '26 — Week 1 Challenge
 
-TouchGrass is my take on the Week 1 challenge: using AI to encourage people to spend less time on screens and more time outside.
+TouchGrass was built for the [Hacktoberfest Week 1: Touch Grass challenge](https://dev.to/challenges/hacktoberfest-week1-2026-10-05).
 
-The model creates the mission, but the point is to put the phone away and do it.
+The project uses **Gemma** for AI-generated outdoor missions, **Vercel** to host the frontend, and **Render** to run the backend.
 
-**Challenge:** [Hacktoberfest Week 1 — Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)
+The goal is to use AI to encourage people to spend less time on screens and more time outside. The model creates the mission; the user completes it in the real world.
+
+**Technologies showcased:** Gemma, Vercel, and Render.
 
 ## License
 
