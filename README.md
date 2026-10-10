@@ -2,46 +2,62 @@
 
 **An AI whose success is measured by how quickly you stop using it.**
 
-TouchGrass is a small project I built for the **Hacktoberfest '26 Open-Source AI Challenge — Week 1: Touch Grass**.
+TouchGrass is a project built for the **Hacktoberfest '26 Open-Source AI Challenge — Week 1: Touch Grass**.
 
-The idea is simple: instead of using AI to spend more time on a screen, why not use it to help us go outside? TouchGrass generates outdoor missions based on your preferences. You can complete a mission, come back, write about your experience, and optionally upload a photo as evidence.
+The idea is simple: instead of using AI to spend more time on a screen, use it to help you go outside. TouchGrass generates outdoor missions based on your preferences. Complete a mission, return to write about your experience, and optionally attach a photo as evidence.
+
+The AI creates the mission. The real experience happens away from the screen.
+
+## Live Demo
+
+- **Live App:** https://touchgrass-delta-six.vercel.app/
+- **Demo Video:** https://youtu.be/9seersnxmN4
+- **Repository:** https://github.com/HarshAggarwal1/touchgrass
 
 ## Features
 
-- Generate outdoor missions based on activity, duration, difficulty, and setting.
-- Use Gemma locally through Ollama to generate missions.
-- Go Outside Mode to encourage users to put their phones away.
-- Add a reflection after completing a mission.
-- Optionally attach photo evidence to a submission.
-- View previous missions and reflections in My Submissions.
-- Save submissions in the browser so they remain available after refreshing the page.
-- Use built-in fallback missions when the local AI model is unavailable.
+- **AI-generated missions:** Generate outdoor activities based on duration, difficulty, activity preferences, and setting.
+- **Go Outside Mode:** Encourages you to put your phone away and focus on the real world.
+- **Personal reflections:** Write about your experience after completing a mission.
+- **Photo evidence:** Optionally attach a photo to a submission.
+- **Mission history:** Review previous missions and reflections through My Submissions.
+- **Browser-based persistence:** Submissions remain available after refreshing the page in the same browser.
+- **Fallback missions:** Built-in missions keep the application usable when AI inference is unavailable.
+- **Responsive interface:** A simple interface designed around spending less time on the screen.
 
 ## Screenshots
 
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/86dbadb6-a3fb-4059-9c43-faa95a230d55" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/eb50ff1e-001b-4981-acde-f5ef53fd2173" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/37056a47-28db-4de4-b403-76d21931838b" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/138f3685-706a-4c97-b013-b9187ac9b064" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/d40a45f6-00b9-43d2-b2d2-a9c3fc4d0257" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/88103c5d-74e4-4217-994f-3eb629bc0824" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/ec2c3649-8d6f-494d-bebf-243e1c3168b5" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/b5e377d6-4dd3-42fc-8723-c3be3c6f94c9" />
-<img width="42%" alt="image" src="https://github.com/user-attachments/assets/04242ee9-8deb-43e5-82b3-9d6232fb0d5b" />
+<!-- Keep your screenshots here. Replace or reorder them as needed. -->
 
-## Live Links
-
-- **Live Link:** https://touchgrass-delta-six.vercel.app/
-- **Demo Video:** https://youtu.be/9seersnxmN4
+<img width="42%" alt="TouchGrass home screen" src="https://github.com/user-attachments/assets/86dbadb6-a3fb-4059-9c43-faa95a230d55" />
+<img width="42%" alt="TouchGrass mission interface" src="https://github.com/user-attachments/assets/eb50ff1e-001b-4981-acde-f5ef53fd2173" />
+<img width="42%" alt="TouchGrass mission experience" src="https://github.com/user-attachments/assets/37056a47-28db-4de4-b403-76d21931838b" />
+<img width="42%" alt="TouchGrass reflection interface" src="https://github.com/user-attachments/assets/138f3685-706a-4c97-b013-b9187ac9b064" />
+<img width="42%" alt="TouchGrass submissions interface" src="https://github.com/user-attachments/assets/d40a45f6-00b9-43d2-b2d2-a9c3fc4d0257" />
 
 ## Tech Stack
 
-- **Frontend:** React, Vite, CSS
-- **Backend:** Node.js, Express
-- **AI model:** Gemma (`gemma4:e2b`)
-- **Local AI runtime:** Ollama
-- **Hosted AI Runtime:** Hugging Face
-- **Storage:** Browser localStorage
+| Component | Technology |
+|---|---|
+| Frontend | React, Vite, CSS |
+| Backend | Node.js, Express |
+| Hosted AI inference | Hugging Face Inference Providers |
+| AI model | Configurable through `HF_MODEL` |
+| Local AI runtime | Ollama, if using the local development integration |
+| Storage | Browser `localStorage` |
+| Frontend deployment | Vercel |
+| Backend deployment | Render |
+
+## How It Works
+
+1. The user selects their preferences for an outdoor activity.
+2. The frontend sends the preferences to the Express backend.
+3. The backend requests a mission from the configured AI inference provider.
+4. The backend validates the response and returns the generated mission.
+5. If inference fails or the response is invalid, the backend can return a built-in fallback mission.
+6. The user enters Go Outside Mode and completes the activity away from the screen.
+7. After returning, the user can write a reflection and optionally attach photo evidence.
+8. The submission is saved in browser storage and can be viewed through My Submissions.
 
 ## Getting Started
 
@@ -49,8 +65,11 @@ The idea is simple: instead of using AI to spend more time on a screen, why not 
 
 - Node.js 18 or newer
 - npm
-- [Ollama](https://ollama.com/download)
-- Enough memory and disk space to run the Gemma model
+- Git
+
+For hosted inference, you also need a Hugging Face account and a token with the required Inference Providers permissions.
+
+For local Ollama development, you additionally need [Ollama](https://ollama.com/download) and the model configured in your local backend.
 
 ### 1. Clone the repository
 
@@ -59,19 +78,39 @@ git clone https://github.com/HarshAggarwal1/touchgrass.git
 cd touchgrass
 ```
 
-### 2. Download the model
-
-```bash
-ollama pull gemma4:e2b
-```
-
-Make sure Ollama is installed and running before starting the application.
-
-### 3. Install dependencies
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
+
+### 3. Configure environment variables
+
+Create the environment files required by your local setup. Use `.env.example` as a reference if it is present in the repository.
+
+For the hosted Hugging Face backend, the server configuration uses variables similar to:
+
+```dotenv
+PORT=8787
+FRONTEND_URL=http://localhost:5173
+HF_TOKEN=your_hugging_face_token
+HF_MODEL=google/gemma-2-2b-it
+```
+
+The model value above is an example. Choose a model supported by an inference provider available to your account.
+
+For the frontend, configure the backend URL using Vite's environment variable:
+
+```dotenv
+VITE_API_URL=http://localhost:8787
+```
+
+**Security notes:**
+
+- Never commit real API tokens or secrets to Git.
+- Keep backend credentials in the server environment, not in frontend variables.
+- Variables prefixed with `VITE_` are exposed to the browser bundle and must not contain secrets.
+- Keep `.env` files out of version control.
 
 ### 4. Start the application
 
@@ -79,74 +118,141 @@ npm install
 npm run dev
 ```
 
-Open the frontend URL shown in the terminal. It is normally:
+This command starts the frontend and backend together if the project's dependencies and scripts are configured accordingly.
+
+The frontend normally runs at:
 
 http://localhost:5173
 
-The Express API normally runs at:
+The backend normally runs at:
 
 http://localhost:8787
 
-### Windows PowerShell
-
-If PowerShell blocks the npm script, try:
+On Windows PowerShell, if script execution causes an npm command issue, try:
 
 ```powershell
 npm.cmd install
 npm.cmd run dev
 ```
 
-## How It Works
+### Optional: Local Ollama Setup
 
-1. The user chooses the type of outdoor activity and other preferences.
-2. The frontend sends these preferences to the Express backend.
-3. The backend asks the local Gemma model through Ollama to generate a mission.
-4. The generated mission is displayed in the app.
-5. The user enters Go Outside Mode and goes outdoors.
-6. After returning, the user can write a reflection and attach photo evidence.
-7. The saved submission can be viewed later in My Submissions.
+If the current codebase retains the local Ollama integration:
 
-If Ollama is unavailable or the model response cannot be used, the application can generate a fallback mission instead.
+1. Install [Ollama](https://ollama.com/download).
+2. Download the model configured in your local backend.
+3. Make sure Ollama is running.
+4. Configure the backend to use the local inference path.
+5. Start the application with `npm run dev`.
+
+For example, if the configured model is `gemma4:e2b`:
+
+```bash
+ollama pull gemma4:e2b
+```
+
+Use the model name expected by your actual local backend configuration.
+
+## Deployment
+
+TouchGrass uses a separate frontend and backend deployment.
+
+### Frontend — Vercel
+
+Deploy the React/Vite application to [Vercel](https://vercel.com/).
+
+Configure the following environment variable in the Vercel project:
+
+```dotenv
+VITE_API_URL=https://your-render-backend-url
+```
+
+Replace the example URL with your deployed Render backend URL. Rebuild the frontend after changing environment variables.
+
+### Backend — Render
+
+Deploy the Express server to [Render](https://render.com/).
+
+Typical settings for a repository with `package.json` at its root:
+
+- **Build command:** `npm install`
+- **Start command:** `npm start`
+- **Root directory:** Leave blank if the backend and `package.json` are at the repository root.
+
+Configure the required backend environment variables in Render:
+
+```dotenv
+FRONTEND_URL=https://touchgrass-delta-six.vercel.app
+HF_TOKEN=your_hugging_face_token
+HF_MODEL=your_supported_model_id
+```
+
+Use the actual deployed frontend URL and a model supported by your enabled inference provider. Never put the Hugging Face token in the frontend configuration.
 
 ## Checking the AI Integration
 
-Open the following URL while the backend is running:
+### Health endpoint
+
+When the backend is running locally, open:
 
 http://localhost:8787/api/health
 
-This endpoint reports whether Ollama and the configured model are available.
+For a deployed backend, open:
 
-You can also open the browser's Developer Tools, go to the Network tab, and inspect the response from `POST /api/mission`.
+`https://your-render-backend-url/api/health`
 
-- `source: local-model` indicates that the request used the local model path.
-- `source: built-in-fallback` indicates that the fallback generator was used.
+The response should indicate whether the server is running and whether its hosted inference configuration is present. The exact fields depend on the active backend implementation.
+
+A configured token does not guarantee that the model can generate a response.
+
+### Inspect mission generation
+
+1. Open the app in your browser.
+2. Open Developer Tools using `F12`.
+3. Select the **Network** tab and filter by **Fetch/XHR**.
+4. Generate a mission.
+5. Select the `POST /api/mission` request and inspect its response.
+
+The `source` field indicates which path was used:
+
+- `hosted-model`: The hosted AI generated the mission.
+- `local-model`: The local model generated the mission, if local mode is supported.
+- `built-in-fallback`: A predefined mission was returned instead of a successful model-generated mission.
+
+A `200 OK` response does not necessarily mean AI inference succeeded. Check both the `source` field and the backend logs.
 
 ## Storage and Privacy
 
-Mission submissions, reflections, and photo evidence are stored locally in the browser. They are not uploaded to a remote database by this application.
+TouchGrass stores mission submissions, reflections, and photo evidence in the browser using `localStorage`.
 
-This means that the saved data is tied to the browser and device being used. It is not automatically synced across devices.
+Consequently:
 
-The app uses a local model through Ollama, so it does not require a paid AI API.
+- Data is associated with the browser and device being used.
+- Submissions are not automatically synchronized across devices.
+- Clearing browser data may remove saved submissions.
+- The application does not use a remote database for these submissions in its current design.
 
-## Hacktoberfest '26 — Week 1 Challenge
+Generating a mission sends the selected preferences to the backend. When hosted inference is enabled, the backend forwards the required prompt and data to the configured inference provider.
 
-This project was built for the **Hacktoberfest Open-Source AI Challenge, Week 1: Touch Grass**.
-
-The challenge is about using open-source AI or open-weight models to encourage people to spend less time on screens and more time in the real world.
-
-TouchGrass is my attempt at this idea: AI creates the mission, but the actual activity happens away from the screen.
-
-**Challenge link:** [Hacktoberfest Week 1 — Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)
-
-**Prize category:** Best Use of Gemma, Vercel and Render where applicable. The project uses Gemma locally through Ollama;
+Avoid including sensitive personal information in mission requests or reflections sent to external services.
 
 ## Current Limitations
 
-- The app can use fallback missions if the AI model is unavailable.
-- For hosted AI it can use fallback missions due to unavailability of AI model or because of not enough credits.
-- Submissions are stored in the browser and are not synced to an account or cloud database.
-- For local usage Ollama and the model need to be installed locally.
+- Hosted AI availability depends on the selected model, inference provider, account permissions, quotas, and available credits.
+- When hosted inference fails, the backend may return a built-in fallback mission.
+- Local Ollama mode, if retained, requires a compatible local model and sufficient system resources.
+- Submissions are browser-local and are not backed by a cloud database or user account.
+- Saved submissions do not automatically transfer between browsers or devices.
+
+## Hacktoberfest '26 — Week 1 Challenge
+
+TouchGrass was built for the **Hacktoberfest Open-Source AI Challenge — Week 1: Touch Grass**.
+
+The project explores how open-source AI and open-weight models can encourage people to spend less time on screens and more time engaging with the real world.
+
+**Challenge:** [Hacktoberfest Week 1 — Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)
+
+**Project idea:** AI creates the mission, but the actual activity happens away from the screen.
 
 ## License
 
