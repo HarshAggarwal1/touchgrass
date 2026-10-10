@@ -19,7 +19,7 @@ The idea is simple: instead of using AI to spend more time on a screen, why not 
 
 ## Screenshots
 
-<img width="42&" alt="image" src="https://github.com/user-attachments/assets/86dbadb6-a3fb-4059-9c43-faa95a230d55" />
+<img width="42%" alt="image" src="https://github.com/user-attachments/assets/86dbadb6-a3fb-4059-9c43-faa95a230d55" />
 <img width="938" height="533" alt="image" src="https://github.com/user-attachments/assets/eb50ff1e-001b-4981-acde-f5ef53fd2173" />
 <img width="947" height="534" alt="image" src="https://github.com/user-attachments/assets/37056a47-28db-4de4-b403-76d21931838b" />
 <img width="945" height="533" alt="image" src="https://github.com/user-attachments/assets/138f3685-706a-4c97-b013-b9187ac9b064" />
